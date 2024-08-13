@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toggle bar</title>
+    <style>
+     *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        border: none;
+        outline: none;
+        scroll-behavior: smooth;
+     }
+     :root{
+        --bg-color:white;
+        --text-color:rgb(14, 240, 82);
+        --main-color:red;
+     }
+     html{
+        overflow-x: hidden;
+     }  
+     body{
+        background-color: var(--bg-color);
+     } 
+     .navigator{
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding:2rem 7%;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        transition: 0.5s;
+        justify-content: space-between;
+     }
+     .logo{
+        font-size: 2.5rem;
+        color: var(--main-color);
+        font-weight: 600;
+        cursor: pointer;
+        margin-right: auto;
+
+     }
+     .navbar a{
+      position: relative;
+      text-transform: capitalize;
+      color: aqua;
+      font-size: 1.7rem;
+      font-weight: 500;
+      margin-right: 3.5rem;
+        
+     }
+     #menu-icon{
+      font-size: 3.6rem;
+      color: blue;
+      display: none;
+     }
+     @media (max-width:768px) {
+      #menu-icon{
+         display: block;
+      }
+      .navbar {
+         position: absolute;
+         top: 100%;
+         left: 0;
+         width: 100%;
+         background-color: green;
+         border-top:0.1rem solid ;
+         border-color: red;
+         display: none;
+      }
+      .navbar.active{
+         display: block;
+      }
+      .navbar a{
+         display: block;
+         font-size: 2rem;
+         margin: 3rem 0;
+      }
+      
+     }
+    </style>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header id="navigator" class="navigator">
+        <div class="logo">
+            <a href="index.html" class="logo">hardemide</a>
+        </div>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about us">About us</a>
+        <a href="#agent">Agent</a>
+        <a href="#buy">Buy</a>
+        <a href="#site">Site</a>
+       
+    </div>
+    <i class="bx bx-menu" id="menu-icon"></i>
+    </header>
+    <script>
+      let menuIcon = document.querySelector("#menu-icon")
+      let navbar=document.querySelector(".navbar")
+      menuIcon.onclick=()=>{menuIcon.classList.toggle("bx-x")
+   navbar.classList.toggle("active")}
+    </script>
+
+
+</body>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</html>
